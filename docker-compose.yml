@@ -17,6 +17,8 @@ services:
     build:
       context: ./app-python
       dockerfile: Dockerfile
+    env_file:
+      - .secrets.env
     environment:
       - ENV_LOGIN=my_env_login
       - ENV_PASSWORD=my_env_password

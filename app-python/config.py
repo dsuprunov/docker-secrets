@@ -10,6 +10,9 @@ class Settings(BaseSettings):
     ENV_LOGIN: str
     ENV_PASSWORD: str
 
+    DOT_ENV_LOGIN: str
+    DOT_ENV_PASSWORD: str
+
     class Config:
         case_sensitive = True
         secrets_dir = '/run/secrets'
