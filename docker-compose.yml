@@ -1,0 +1,18 @@
+version: "3.8"
+
+services:
+  app-bash:
+    image: docker-secrets-app-bash:latest
+    container_name: docker-secrets-app-bash
+    secrets: 
+      - file_login
+      - file_password
+    build:
+      context: ./app-bash
+      dockerfile: Dockerfile      
+
+secrets:
+  file_login:
+    file: ./app-bash/file-login.txt
+  file_password:
+    file: ./app-bash/file-password.txt
