@@ -28,9 +28,9 @@ services:
 
 secrets:
   file_login:
-    file: ./app-bash/file-login.txt
+    file: ./file-login.txt
   file_password:
-    file: ./app-bash/file-password.txt
+    file: ./file-password.txt
   external_login:
     external: true
   external_password:
