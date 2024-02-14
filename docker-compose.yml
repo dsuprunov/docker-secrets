@@ -9,10 +9,29 @@ services:
       - file_password
     build:
       context: ./app-bash
-      dockerfile: Dockerfile      
+      dockerfile: Dockerfile
+
+  app-python:
+    image: docker-secrets-app-python:latest
+    container_name: docker-secrets-app-python
+    build:
+      context: ./app-python
+      dockerfile: Dockerfile
+    environment:
+      - ENV_LOGIN=my_env_login
+      - ENV_PASSWORD=my_env_password
+    secrets: 
+      - file_login
+      - file_password
+    ports:
+      - 8181:8181
 
 secrets:
   file_login:
     file: ./app-bash/file-login.txt
   file_password:
     file: ./app-bash/file-password.txt
+  external_login:
+    external: true
+  external_password:
+    external: true
